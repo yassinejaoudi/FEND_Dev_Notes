@@ -1,0 +1,33 @@
+/* Mostly fluid pattern is being implemented below */
+.content{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+@media screen and (max-width: 540px ){
+    
+}
+
+@media screen and (min-width: 800px){
+    .hero, .top-news{
+        width: 50%;
+    }
+    .scores{
+        width: 66.66%;
+    }
+    .weather{
+        width:33.33%;
+    }
+}
+
+@media screen and (min-width: 1000px){
+    .content, .footer, .header__inner, .footer__inner{
+        width: 1100px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+}
+
+/* TODO: Implement the Off canvas pattern*/
