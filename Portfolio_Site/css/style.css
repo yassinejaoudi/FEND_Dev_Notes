@@ -1,0 +1,42 @@
+.image-logo{
+    width: 585px;
+}
+
+.featured-picture{
+    width: 200px;
+}
+
+.main-picture{
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.row-line{
+    color: #7d97ad;
+    height: 2px;
+    background-color: #7d97ad;
+    width: 100%;
+}
+
+.fullName{
+    font-size: 30px;
+    text-align: right;
+}
+
+.title{
+    font-size: 20px;
+    text-align: right;
+}
+
+.title-work{
+    color: #7d97ad;
+    margin-bottom: 20px;
+}
+
+.col-md-12{
+    padding: 0;
+}
+
+.col-md-4{
+    text-align: center;
+}

@@ -1,0 +1,42 @@
+.sub-container{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+@media screen and (max-width:549px){
+    .col-md-6{
+        width: 50%;
+    }
+    .image-logo{
+        width: 220px;
+    }
+    .fullName{
+        font-size: 20px;
+        text-align: right;
+    }
+    .title{
+        font-size: 12px;
+        text-align: right;
+    }
+}
+
+@media screen and (min-width:550px) and (max-width: 991px){
+    .col-md-6{
+        width: 50%;
+    }
+    .image-logo{
+        width: 300px;
+    }
+    .fullName{
+        font-size: 25px;
+        text-align: right;
+    }
+    .title{
+        font-size: 15px;
+        text-align: right;
+    }
+    .col-md-4{
+        width:234px;
+    }
+    
+}
