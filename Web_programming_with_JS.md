@@ -16,6 +16,13 @@
 
 * commands reviewed in this lesson are: `pwd` print working directory, `cd` change directory, `cd ..` change to the parent directory, `mv` move file, `mkdir` make directory, `rm` remove file, `rmdir` remove directory, `curl` downloading, `less` viewing files in the shell, `cat` reads the file and output the content (runs several things together), `ls` list directory, `ls-l` list it with parameters, `grep` searching and pipes, `grep -c` searching the count of ... , `echo` print to the shell, `$` Set it to a variable in the shell
 
-### Lesson 10: Version Control:
+### Lesson 10, 11, 12, 13: Version Control:
 
-* `git status`, `git init`, `git clone`, `git push`, `git push`, `git commit`, `git log`, `git log --oneline`,  `git log --stat`, `git show`, `git log -p`
+* `git status`, `git init`, `git clone`, `git push`, `git push`, `git commit`, `git log`, `git log --oneline`,  `git log --stat`, `git show`, `git log -p`, `git log -p --stat`, `git log -p -w`, `git log --stat SHA#`
+
+### Lesson 14: Tagging, branching, and merging:
+
+* `git tag`: add tags to specific commits, whats recommeded is the annotated tag and it can be done by using the flag `-a` which looks as follow `git tag -a` and to delete a tag we can use `git tag -d`
+* `git branch`: able to create multiple lines of developement
+* `git checkout`: able to switch between different branches and tags
+* `git merge`: take changes on different branches and conbine them
