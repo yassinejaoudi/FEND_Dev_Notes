@@ -12,4 +12,10 @@ A stylesheet is a file containing the code that describes how elements on your w
 * To prevent an overflow of the container, we should use relative units.
 * Prevent by the following: `img, embed, object, video{max-width: 100%;}`
 
+### Common Responsive Patterns:
+
+* **Mostly Fluid**: 
+* **Layout shifter**:
+* **Column Drop**: It is probably the easiest, 
+* **Off Canvas**:
 
