@@ -57,7 +57,7 @@
 
 #### Update existing page content:
 
-*** In this section, we looked at multiple ways to change page content: ***
+__ In this section, we looked at multiple ways to change page content: __
 
 * `.innerHTML`
 * `.outerHTML`
@@ -70,14 +70,14 @@ We also looked at the difference between `.textContent` and `.innerText`. `.text
 
 #### Add new page content:
 
-***In this section, we learned how to create new DOM elements and add them to the page. We looked at the following methods:***
+__In this section, we learned how to create new DOM elements and add them to the page. We looked at the following methods:__
 
 * `.createElement()` to create new elements
 * `.appendChild()` to add a child element to a parent element as its last child
 * `.createTextNode()` to create a text node
 * `.insertAdjacentHTML()` to put HTML text anywhere around an element
 
-***Some important things to note are:***
+__Some important things to note are:__
 
 if an element already exists in the DOM and this element is passed to `.appendChild()`, the  `.appendChild()` methodwill move it rather than duplicating it
 an element's .textContent property is used more often than creating a text node with the `.createTextNode() ` method
@@ -85,17 +85,74 @@ the `.insertAdjacentHTML()` method's second argument has to be text, you can't p
 
 #### Remove Page Content:
 
-*** In this short section, we learned two ways to remove an element from the page. You learned about: ***
+__In this short section, we learned two ways to remove an element from the page. You learned about:__
 
 * `.removeChild()`
 * `.remove()`
 
 The difference is that with .removeChild() must be called on the parent of the element being removed and must be passed the child to be removed, while .remove() can be called directly on the element to delete.
 
-*** We also learned about the following helpful properties: ***
+__We also learned about the following helpful properties:__
 
 * `.firstChild`
 * `.firstElementChild`
 * `.parentElement`
 
 The difference between .firstChild and .firstElementChild, is that .firstElementChild will always return the first element, while .firstChild might return whitespace (if there is any) to preserve the formatting of the underlying HTML source code.
+
+#### Style page content:
+
+__We learned a ton of content in this section! We looked at:__
+
+* modifying individual styles with `.style.<prop>`
+* updating multiple styles at once with `.style.cssText`
+* getting/setting a list of classes with `.className`
+* getting/setting/toggling CSS classes with `.classList`
+
+My recommendation to you is that, out of the list of techniques you learned in this section, to use the `.classList` property more than any other. `.classList` is by far the most helpful property of the bunch, and it helps to keep your CSS styling out of your JavaScript code.
+
+### Lesson 21: Working with Browser Events:
+
+#### Respond to events:
+
+In this section, you learned all about events, the EventTarget Interface, and how to add event listeners. We used the `.addEventListener()` method to attach listeners to:
+
+* the document
+* a Node
+* an Element
+
+basically anything that inherits from the EventTarget Interface. We also saw that there are three main parts to an event listener:
+
+* an event target - the target
+* the type of event to listen for - the type
+* a function to run when the event occurs - the listener
+
+#### Remove an Event listener:
+
+In this section, you learned about how to remove event listeners. You took a dive into object equality and how that plays a huge part in removing an event. Lastly, we also looked at how you can find out what event listener a DOM element has by using the DevTools.
+
+#### Phases of an event:
+
+We covered a number of important aspects of events and event listeners in this section! We looked at:
+
+* the phases of an event:
+    * the `capturing` phase
+    * the `at target` phase
+    * the `bubbling`  phase
+* the event object
+* prevent the default action with `.preventDefault()`
+
+
+#### Avoid too many events:
+
+In this section, we looked at Event Delegation. Event Delegation is the process of delegating to a parent element the ability to manage events for child elements. We were able to do this by making use of:
+
+* The event object and its `.target` property
+* The different phases of an event
+
+#### Know when the DOM is ready:
+
+__In this section, we learned about the helpful `DOMContentLoaded` event.__
+
+Along the way, we reviewed how the HTML code is parsed incrementally and how this affects JavaScript/DOM code. We also looked at why writing DOM-manipulation code in the <head> can cause errors.
+
