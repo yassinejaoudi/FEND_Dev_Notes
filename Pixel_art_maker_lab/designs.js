@@ -1,49 +1,48 @@
-$('#submitChoice').on('click', function(event){
-  event.preventDefault();
-  makeGrid();
+// Select size input
+let heightValue = $('#inputHeight').val();
+let widthValue = $('#inputWidth').val();
+
+// When size is submitted by the user, call makeGrid()
+const submitedValue = $('#submitChoice');
+submitedValue.on('click', (event) => {
+  	event.preventDefault();
+	makeGrid();
 });
 
-function makeGrid(){
-  const table = $('#pixelCanvas');
-  table.empty();
-  let height = $('#inputHeight').val();
-  let width = $('#inputWidth').val();
-  
-  
-  for(var row=0; row < width; row++){
-        table.append('<tr></tr');
+function makeGrid(event) {
+  	for (var row = 0; row < widthValue; row++){
+      	$('#pixelCanvas').append('<tr></tr>');
+    }for(var column = 0; column < heightValue; column++){
+      	$('tr').append('<td></td>');
     }
-    for(var column=0; column < height; column++){
-        $('tr').append('<td></td>');
-    }
-  
     // Set Color
     $('#colorPicker').on('change', function(){
-        color = $('#colorPicker').val();
-        $(input).css('border-color', color);
+        colorInput = $('#colorPicker').val();
+        $(input).css('border-color', colorInput);
     });
 
     //Mouse Click
-    $(table).on('click', 'td', function(evt){
-        evt.preventDefault();
-        $(this).css('background-color', color);
+    $('#pixelCanvas').on('click', 'td', function(event){
+        event.preventDefault();
+        $(this).css('background-color', colorInput);
     });
-
-    // Mouse Down
-    $(table).on('mousedown', function(){
-        mouseDown = true;
+  
+	//Mouse down
+  	$('#pixelCanvas').on('mousedown', function(){
+      mouseDown = true;
     });
-
-    // Mouse Up
-    $(table).on('mouseup', function(){
-        mouseDown = false;
+  
+  	//Mouse Up
+  	$('#pixelCanvas').on('mouseup', function(){
+      mouseUp =false;
     });
-
-    // Clicked Mouse Moving
-    $(table).on('mousemove', 'td', function(evt){
-        evt.preventDefault();
-        if (mouseDown){
-            $(this).css('background-color', color);
-        }
-    })
+  	
+  	//Mouse Moving
+  	$('#pixelCanvas').on('mousemove', 'td', function(event){
+      event.preventDefault();
+      if (mouseDown){
+        $(this).css('background-color', colorInput);
+      }
+    });
 }
+	
