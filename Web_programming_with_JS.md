@@ -43,6 +43,28 @@
 * `git remote -v`: to verify the shortname with the correct URL
 * `git fetch`:  It just retrieves the commits and moves the tracking branch. It does not merge the local branch with the tracking branch
 
+### Lesson 17: Working on another' Developer's repository:
+
+* `git shortlog` : A quick way that we can see how many commits each contributor has added to the repository.
+* `git shortlog -s -n`: `-s` flag is to show just the number of commits (rather than each commit's message) and `-n` flag to sort them numerically (rather than alphabetically by author name)
+* `git log --author=` : to filter the commits to the provided author.
+* `git log --oneline --author=`: 
+
+__Filters Commits by Search__:
+
+* In case the commit message is long, you can provide its details in the description because If you write a descriptive commit message, then it's so much easier to search through the commit messages, later, to find exactly what you're looking for. And remember, if the commit message is not enough for you to explain what the commit is for, you can provide a detailed description of exactly why the commit is needed in the description area.
+* `git show SHA#` show the specific commit with the detailed description.
+
+__Recap:__
+
+The git log command is extremely powerful, and you can use it to discover a lot about a repository. But it can be especially helpful to discover information about a repository that you're collaborating on with others. You can use git log to:
+
+* group commits by author with `git shortlog`
+* filter commits with the --author flag: __Example:__ `$ git log --author="Richard Kalehoff"`
+* filter commits using the --grep flag: __Example:__ `$ git log --grep="border radius issue in Safari"`
+
+
+
 ### Lesson 19: Document object model "DOM":
 
 * The DOM stands for "Document Object Model" and is a tree-like structure that is a representation of the HTML document, the relationship between elements, and contains the content and properties of the elements.
