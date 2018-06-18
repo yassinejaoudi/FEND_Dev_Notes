@@ -29,13 +29,15 @@ function makeGrid(event) {
         $(this).css('background-color', colorInput);
     });
   
-	//Mouse down
-  	canvas.on('mousedown', function(){
+    //Mouse down
+    let mouseDown = '';
+  	canvas.mousedown( function(){
       mouseDown = true;
     });
   
-  	//Mouse Up
-  	canvas.on('mouseup', function(){
+    //Mouse Up
+    let mouseUp = '';
+  	canvas.mouseup( function(){
       mouseUp =false;
     });
   	
