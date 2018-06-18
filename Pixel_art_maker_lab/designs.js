@@ -1,6 +1,7 @@
 // Select size input
 let heightValue = $('#inputHeight').val();
 let widthValue = $('#inputWidth').val();
+let colorInput = '';
 
 // When size is submitted by the user, call makeGrid()
 const submitedValue = $('#submitChoice');
@@ -20,7 +21,6 @@ function makeGrid(event) {
     // Set Color
     $('#colorPicker').on('change', function(){
         colorInput = $('#colorPicker').val();
-        $(input).css('border-color', colorInput);
     });
 
     //Mouse Click
