@@ -10,8 +10,10 @@ submitedValue.on('click', (event) => {
 });
 
 function makeGrid(event) {
+    const canvas = $('#pixelCanvas');
+    canvas.empty();
   	for (var row = 0; row < widthValue; row++){
-      	$('#pixelCanvas').append('<tr></tr>');
+      	canvas.append('<tr></tr>');
     }for(var column = 0; column < heightValue; column++){
       	$('tr').append('<td></td>');
     }
@@ -22,23 +24,23 @@ function makeGrid(event) {
     });
 
     //Mouse Click
-    $('#pixelCanvas').on('click', 'td', function(event){
+    canvas.on('click', 'td', function(event){
         event.preventDefault();
         $(this).css('background-color', colorInput);
     });
   
 	//Mouse down
-  	$('#pixelCanvas').on('mousedown', function(){
+  	canvas.on('mousedown', function(){
       mouseDown = true;
     });
   
   	//Mouse Up
-  	$('#pixelCanvas').on('mouseup', function(){
+  	canvas.on('mouseup', function(){
       mouseUp =false;
     });
   	
   	//Mouse Moving
-  	$('#pixelCanvas').on('mousemove', 'td', function(event){
+  	canvas.on('mousemove', 'td', function(event){
       event.preventDefault();
       if (mouseDown){
         $(this).css('background-color', colorInput);
