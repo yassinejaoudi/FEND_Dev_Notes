@@ -1,6 +1,3 @@
-// Select size input
-let heightValue = $('#inputHeight').val();
-let widthValue = $('#inputWidth').val();
 let colorInput = '';
 
 // When size is submitted by the user, call makeGrid()
@@ -11,6 +8,8 @@ submitedValue.on('click', (event) => {
 });
 
 function makeGrid(event) {
+    let heightValue = $('#inputHeight').val();
+    let widthValue = $('#inputWidth').val();
     const canvas = $('#pixelCanvas');
     canvas.empty();
   	for (var row = 0; row < widthValue; row++){
