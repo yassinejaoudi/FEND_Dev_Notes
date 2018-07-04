@@ -64,6 +64,11 @@ The git log command is extremely powerful, and you can use it to discover a lot 
 * filter commits using the --grep flag: __Example:__ `$ git log --grep="border radius issue in Safari"`
 
 
+### Lesson 18: Staying in sync with a remote repo:
+
+
+
+
 
 ### Lesson 19: Document object model "DOM":
 
@@ -178,3 +183,40 @@ __In this section, we learned about the helpful `DOMContentLoaded` event.__
 
 Along the way, we reviewed how the HTML code is parsed incrementally and how this affects JavaScript/DOM code. We also looked at why writing DOM-manipulation code in the <head> can cause errors.
 
+### Lesson 23: Performance:
+
+#### Add page content efficiently:
+
+In this section, we took a brief dive into the performance implications of the code we write. We looked at a specific chunk of code and came up with ways that we could improve its performance simply by rearranging when the code was running (moving initialization code out of the `for` loop).
+
+We also looked at how to measure how long it takes code to run using `performance.now()`
+
+Lastly, we looked at using a DocumentFragment `createDocumentFragment()` to prevent performance issues and to prevent adding unnecessary elements to the DOM.
+
+#### Reflow and repaint:
+
+In this section, we took a brief look at what reflow and repaint are and saw how they can impact the performance of a website.
+
+Reflow is the process of calculating the dimensions and position of page elements. This is a computationally intensive (slow) tasks. Repaint is the process of drawing the pixels to the screen. This is faster than reflow, but is still not a fast process. You want to make sure that your code causes the fewest number of reflows as possible.
+
+PS: In general, if you have to make a group of changes, hide/change all/show is a great pattern to use if the changes are relatively contained.
+
+#### The call stack:
+
+In this section, we looked at how JavaScript is a single-threaded programming language, which means it can only execute one thing at a time. We looked at how JavaScript keeps track of what functions are running by using the Call Stack.
+
+#### The event loop:
+
+This section uncovered how JavaScript works under the hood; We looked at how JavaScript, the DOM, and Web APIs all fit together.
+
+Specifically, we looked at how JavaScript is a single-threaded programming language, which means it can only execute one thing at a time. We looked at how JavaScript keeps track of what functions are running by using the Call Stack. We also looked at how asynchronous code is handled.
+
+Asynchronous code makes use of the JavaScript Event Loop. Any asynchronous code (like setTimeout or the function passed to .addEventListener()) is handled by the browser. When this asynchronous code is ready to be executed, it's moved to the queue where it waits until the Call Stack is empty. Whenever the Call Stack is empty, code moves from the Queue over to the Call Stack and gets executed.
+
+Knowing how JavaScript and the Event Loop work can help us write code that is more efficient.
+
+#### SetTimeout:
+
+The browser-provided `setTimeout()` function takes another function and a delay, and invokes the function after the delay has passed.
+
+Knowing how the JavaScript Event Loop works, we can use the `setTimeout()` method to help us write code that allows the browser to handle user interactions.
