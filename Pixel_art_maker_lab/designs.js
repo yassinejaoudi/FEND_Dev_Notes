@@ -1,21 +1,24 @@
-let colorInput = '';
+// Select size input
+let colorInput = 'rgba(0,0,0)';
 
 // When size is submitted by the user, call makeGrid()
-const submitedValue = $('#submitChoice');
+const submitedValue = $('#choiceSubmit');
 submitedValue.on('click', (event) => {
   	event.preventDefault();
 	makeGrid();
 });
 
 function makeGrid(event) {
-    let heightValue = $('#inputHeight').val();
-    let widthValue = $('#inputWidth').val();
-    const canvas = $('#pixelCanvas');
-    canvas.empty();
+  	let heightValue = $('#inputHeight').val();
+  	let widthValue = $('#inputWidth').val();
+  	const canvas = $('#pixelCanvas');
+	canvas.empty();
+  	let id = 0;
   	for (var row = 0; row < widthValue; row++){
-      	canvas.append('<tr></tr>');
-    }for(var column = 0; column < heightValue; column++){
-      	$('tr').append('<td></td>');
+      	canvas.append('<tr id='+id+'></tr>');
+    for(var column = 0; column < heightValue; column++){
+      	$('#'+id).append('<td></td>');}
+      id++;
     }
     // Set Color
     $('#colorPicker').on('change', function(){
@@ -23,29 +26,9 @@ function makeGrid(event) {
     });
 
     //Mouse Click
-    canvas.on('click', 'td', function(event){
+    canvas.on('click','td', function(event){
         event.preventDefault();
         $(this).css('background-color', colorInput);
-    });
-  
-    //Mouse down
-    let mouseDown = '';
-  	canvas.mousedown( function(){
-      mouseDown = true;
-    });
-  
-    //Mouse Up
-    let mouseUp = '';
-  	canvas.mouseup( function(){
-      mouseUp =false;
-    });
-  	
-  	//Mouse Moving
-  	canvas.on('mousemove', 'td', function(event){
-      event.preventDefault();
-      if (mouseDown){
-        $(this).css('background-color', colorInput);
-      }
-    });
+  });
 }
 	
